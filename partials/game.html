@@ -1,0 +1,106 @@
+<div id="game" ng-class="{ 'all-devices-open' : showAllDevices }" >
+
+  <ggl-map  map-id="map-canvas"
+            marker-data     = "{{ markerData }}"
+            start-position  = "{{ startPosition }}"
+            map-options     = "{{ mapOptions }}"
+            pano-options    = "{{ panoOptions }}"
+            pano-position   = "panoPosChange( arg )"
+            pano-pov        = "panoPovChange( arg )"
+            marker-elem     = "markerClick( arg )">
+  </ggl-map>
+
+  <div id="user-ui">
+    <div class="content">
+      <div class="user">
+        <div class="user-info" ng-click="toggleOptionsMenu()">
+          <span class="user-img" style="background-image:url('{{ userImg }}');"></span>
+          <span class="user-name">{{ userData.fullName }}</span>
+          <div class="drop-down-arr">
+            <span ng-show="!userOptionsOpen" class="fa fa-chevron-down"></span>
+            <span ng-show="userOptionsOpen" class="fa fa-chevron-up"></span>
+          </div>
+        </div>
+        <div class="user-options" ng-show="userOptionsOpen" >
+          <button ng-click="leaderBoardClick()" >טבלת תוצאות</button>
+          <button ng-click="pauseGameClick()">עצור משחק</button>
+          <button class="logout" ng-click="logoutClick()" >התנתק</button>
+        </div>
+      </div><!-- user -->
+
+      <div class="game-status">
+        <h4>מכשירים שנמצאו</h4>
+        <div class="found-items">{{ gameStatus.devicesFound.length }}/{{ gameStatus.devicesDistances.length }} <span class="en">NOTE7</span></div>
+      </div><!-- game-status -->
+
+      <div class="game-time">
+        <h4>זמן חיפוש</h4>
+        <stopwatch id="stop-watch"
+                stop-watch-play = "{{ stopWatchPlay }}"
+                start-time-ms   = "{{ startTimeMs }}"
+                time            = "sharedTime"
+                time-ms         = "timeMsUpdate( arg )">
+        </stopwatch>
+      </div><!-- game-time -->
+
+    </div><!-- content -->
+  </div><!-- user-ui -->
+
+
+  <div id="game-ui">
+
+    <div class="devices-list" >
+      <h3>{{ showAllDevices ? 'כל המכשירים:' : 'מכשירים קרובים:' }}</h3>
+      <ol>
+        <li ng-repeat="device in gameStatus.displayList" ng-class="{ 'device-found' : device.status == 1 , 'device-closest' : device.closest == true }">
+
+          <div class="device-icon">
+            <img class="phone" src="images/device-icon.png" alt="תמונה של טלפון NOTE7" />
+            <div ng-if="device.status==1" class="found-icon"><span class="fa fa-check"></span></div>
+          </div>
+
+          <div class="device-info">
+            <span class="device-name en">NOTE7 {{ device.title }}</span>
+            <span class="device-distance"><span class="distance">{{ device.displayDistance }}</span> {{ device.displayUnits }}<br />ממיקומך</span>
+          </div>
+        </li>
+      </ol>
+    </div><!-- devices-list -->
+
+    <button class="toggle-device-list-btn" ng-click="toggleDeviceList()">
+      <span ng-if="showAllDevices" class="fa fa-arrow-right"></span>
+      {{ showAllDevices ? 'סגור' : 'לכל המכשירים' }}
+      <span ng-if="!showAllDevices" class="fa fa-arrow-left"></span>
+    </button>
+  </div><!-- game-ui -->
+
+  <div id="find-pop" ng-show="onFindPhonePop">
+    <div class="cover" ng-click="closePop()"></div>
+
+    <div class="pop">
+
+      <button class="close-btn" ng-click="closePop()"><span class="fa fa-times"></span></button>
+
+      <div class="content">
+        <img class="packshot" src="images/packshot.png" alt="תמונה של מכשיר NOTE7" />
+
+        <div class="txt" ng-show="!endGamePop">
+          <h4>כל הכבוד!</h4>
+          <p>מצאת את <span class="en">NOTE7 {{ popPhoneTitle }}</span></p>
+          <button class="btn-round continue-btn" ng-click="closePop()">המשך בחיפושים <span class="fa fa-arrow-left"></span></button>
+        </div>
+
+        <div class="txt" ng-show="endGamePop">
+          <h4>כל הכבוד!</h4>
+          <p>מצאת את כל ה-<span class="en">NOTE7</span> בזמן של {{ totalTime }}</p>
+          <button class="btn-round share-score-btn" ng-click="shareScore()"><span class="fa fa-share-alt"></span> שתף תוצאה</button>
+          <button class="btn-round leader-board-btn" ng-click="leaderBoardClick()"><span class="fa fa-trophy"></span> לטבלת התוצאות</button>
+        </div>
+
+      </div><!-- content -->
+
+    </div><!-- pop -->
+
+  </div><!-- find-pop -->
+
+</div>

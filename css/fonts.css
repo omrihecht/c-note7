@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'Aa_TypoCellcom';
+    src: url('fonts/aa_typocellcomregular.eot');
+    src: url('fonts/aa_typocellcomregular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aa_typocellcomregular.woff') format('woff'),
+         url('fonts/aa_typocellcomregular.ttf') format('truetype'),
+         url('fonts/aa_typocellcomregular.svg#Aa_TypoCellcomRegularRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aa_TypoCellcom';
+    src: url('fonts/aa_typocellcombold.eot');
+    src: url('fonts/aa_typocellcombold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aa_typocellcombold.woff') format('woff'),
+         url('fonts/aa_typocellcombold.ttf') format('truetype'),
+         url('fonts/aa_typocellcombold.svg#Aa_TypoCellcombold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Aa_TypoCellcom';
+    src: url('fonts/aa_typocellcomblack.eot');
+    src: url('fonts/aa_typocellcomblack.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aa_typocellcomblack.woff') format('woff'),
+         url('fonts/aa_typocellcomblack.ttf') format('truetype'),
+         url('fonts/aa_typocellcomblack.svg#aa_typocellcomblack') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}

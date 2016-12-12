@@ -1,0 +1,89 @@
+<div id="home">
+
+  <div id="bg-holder"></div>
+
+  <div class="content">
+
+    <div class="packshot">
+      <img src="images/packshot.png" alt="תמונה של טלפון NOTE7" />
+    </div>
+
+    <div class="page">
+
+      <div class="login">
+
+        <div class="login-content">
+          <h1>מצאו את ה-<br /><img src="images/galaxy-note-7-big.png" alt="Galaxy Note7" /></h1>
+
+          <div class="description" ng-show="!onLoginForm" >
+            <h2>חפשו את ה-<span class="en">NOTE7</span> במפה ונסו למצוא את כל המכשירים המסתתרים.<br />בכל יום, 5 המוצאים המהירים ביותר יזכו ב-<span class="en">NOTE7</span> חדש מתנה!</h2>
+            <button class="btn-round btn-pink login-btn" ng-click="loginBtnClick()" >בואו לחפש! <span class="fa fa-arrow-left"></span></button>
+          </div>
+
+          <div class="login-form" ng-show="onLoginForm && !onLoad && !onFormReturnMsg" >
+
+            <button class="btn-round btn-blue facebook-login-btn" ng-click="facebookLoginClick()">התחבר דרך <span class="en">facebook</span> <span class="fa fa-arrow-left" ></span></button>
+
+            <div class="or"><span>או</span></div>
+
+            <form id="reg-form" novalidate>
+
+              <div class="form-field" ng-class="{ 'required' : validation.nameErr }" >
+                <input ng-model="userData.fullName" type="text" name="fullName" id="fullName" />
+                <label for="fullName">שם מלא</label>
+                <p class="error" ng-bind-html="validation.nameErr_txt" ng-show="validation.nameErr"></p>
+              </div>
+
+              <div class="form-field" ng-class="{ 'required' : validation.phoneErr }">
+                <input ng-model="userData.phone" type="tel" name="phone" id="phone" maxlength="10" />
+                <label for="childName">טלפון</label>
+                <p class="error" ng-bind-html="validation.phoneErr_txt" ng-show="validation.phoneErr"></p>
+              </div>
+
+              <div class="form-field" ng-class="{ 'required' : validation.emailErr }" >
+                <input ng-model="userData.email" type="email" name="user-mail" id="user-mail" />
+                <label for="user-mail">מייל</label>
+                <p class="error" ng-bind-html="validation.emailErr_txt" ng-show="validation.emailErr"></p>
+              </div>
+
+              <button class="btn-round btn-pink start-btn" label="המשך" ng-click="submitUserClick()">המשך <span class="fa fa-arrow-left" ></span></button>
+
+            </form>
+
+          </div><!-- login-form -->
+
+          <div class="loading-spinner" ng-show="onLoad">
+            <span class="fa fa-spinner fa-pulse fa-3x fa-fw margin-bottom"></span>
+            <div class="txt">{{ loading_msg }}</div>
+          </div>
+
+          <div class="form-return-msg" ng-show="onFormReturnMsg">{{ formReturnMsg }}</div>
+
+        </div>
+
+      </div><!-- login -->
+
+
+
+
+      <div id="leader-board">
+        <h3><span class="fa fa-trophy"></span> טבלת התוצאות</h3>
+
+        <ol>
+
+          <li ng-repeat="leader in leaders">
+            <span class="order">{{ leader.order }}</span>
+            <span class="cup-icon"><span class="fa fa-trophy"></span></span>
+            <span class="picture" style="background-image:url('{{ leader.leaderImage }}') "></span>
+            <span class="name">{{ leader.fullName }}</span>
+            <span class="score">{{ leader.topScore }}</span>
+            <span class="time">{{ leader.topScoreTime }}</span>
+          </li>
+
+        </ol>
+      </div><!-- leader-board -->
+
+
+    </div><!-- page -->
+  </div><!-- content -->
+</div><!-- home -->

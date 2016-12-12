@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="note7">
+  <head>
+    <meta charset="utf-8">
+    <title>Cellcom Note7</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link rel="stylesheet" href="css/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/fonts.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+
+  </head>
+
+  <body ontouchstart="">
+
+    <script>
+
+      var fb_init, fb_connected, fb_authResponse;
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1760210500860268',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+    				fb_authResponse = response.authResponse;
+            fb_connected = true;
+          }
+        });
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <div class="main-content" ng-controller="MainController">
+
+      <header>
+        <div class="social" ng-show="MainControllerObj.onHomePage">
+          <button class="share-btn share-twitter" title="שתף בטוויטר" ng-click="shareTwitter()" ><span class="fa fa-twitter-square"></span></button>
+          <button class="share-btn share-facebook" title="שתף בפייסבוק" ng-click="shareFacebook()" ><span class="fa fa-facebook-square"></span></button>
+          <button class="text-btn results-btn" ng-click="resultsBtnClick()" >טבלת תוצאות</button>
+          <button class="text-btn terms-btn" ng-click="termsBtnClick()" >תקנון</button>
+        </div>
+        <img class="logo-cellcom" src="images/logo-cellcom-pink.png" alt="לוגו סלקום" ng-click="logoClick()" />
+      </header>
+
+      <div id="page-holder" ng-view=""></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    <script src="js/mobile-detect.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/note7-directives.js"></script>
+    <script src="js/angular-setup.js"></script>
+    <script src="js/note7-controllers.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_PtCMe4SgXMlUcG2M9NwyLqnEDyCDSKE&v=3.exp"></script>
+    <script src="js/note7-utils.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

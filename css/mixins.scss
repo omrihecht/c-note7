@@ -1,0 +1,122 @@
+/* Scss Document */
+
+$colors-pink	: #ec0174;
+$white-trans	: rgba(255,255,255,.3);
+
+.btn-round{ font-size:1.2rem; font-weight:600; width:280px; height:50px; border-radius:25px;
+	.fa{ font-weight:normal; }
+}
+
+.btn-pink{ color:white; border-top:1px solid #ef02d2; border-bottom:1px solid #7a0633;
+	background: rgba(247,0,140,1);
+	background: -moz-linear-gradient(top, rgba(247,0,140,1) 0%, rgba(255,0,98,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247,0,140,1)), color-stop(100%, rgba(255,0,98,1)));
+	background: -webkit-linear-gradient(top, rgba(247,0,140,1) 0%, rgba(255,0,98,1) 100%);
+	background: -o-linear-gradient(top, rgba(247,0,140,1) 0%, rgba(255,0,98,1) 100%);
+	background: -ms-linear-gradient(top, rgba(247,0,140,1) 0%, rgba(255,0,98,1) 100%);
+	background: linear-gradient(to bottom, rgba(247,0,140,1) 0%, rgba(255,0,98,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7008c', endColorstr='#ff0062', GradientType=0 );
+}
+
+.btn-blue{ color:white; border-top:1px solid #77b1db; border-bottom:1px solid #1d2444;
+	background: rgba(70,104,173,1);
+	background: -moz-linear-gradient(top, rgba(70,104,173,1) 0%, rgba(47,72,136,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(70,104,173,1)), color-stop(100%, rgba(47,72,136,1)));
+	background: -webkit-linear-gradient(top, rgba(70,104,173,1) 0%, rgba(47,72,136,1) 100%);
+	background: -o-linear-gradient(top, rgba(70,104,173,1) 0%, rgba(47,72,136,1) 100%);
+	background: -ms-linear-gradient(top, rgba(70,104,173,1) 0%, rgba(47,72,136,1) 100%);
+	background: linear-gradient(to bottom, rgba(70,104,173,1) 0%, rgba(47,72,136,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4668ad', endColorstr='#2f4888', GradientType=0 );
+}
+
+.pink-glow{ content:''; position:absolute; display:block; width:300%; height:300%; top:-100%; right:-100%; z-index:-1;
+	background: rgba(236,1,115,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(236,1,115,1) 0%, rgba(236,1,115,0) 50%, rgba(236,1,115,0) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(236,1,115,1)), color-stop(50%, rgba(236,1,115,0)), color-stop(100%, rgba(236,1,115,0)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(236,1,115,1) 0%, rgba(236,1,115,0) 50%, rgba(236,1,115,0) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(236,1,115,1) 0%, rgba(236,1,115,0) 50%, rgba(236,1,115,0) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(236,1,115,1) 0%, rgba(236,1,115,0) 50%, rgba(236,1,115,0) 100%);
+	background: radial-gradient(ellipse at center, rgba(236,1,115,1) 0%, rgba(236,1,115,0) 50%, rgba(236,1,115,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec0173', endColorstr='#ec0173', GradientType=1 );
+}
+
+.purple-glow{ content:''; position:absolute; display:block; width:300%; height:300%; top:-100%; right:-100%; z-index:-1;
+	background: rgba(121,37,146,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(121,37,146,1) 0%, rgba(121,37,146,0) 50%, rgba(121,37,146,0) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(121,37,146,1)), color-stop(50%, rgba(121,37,146,0)), color-stop(100%, rgba(121,37,146,0)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(121,37,146,1) 0%, rgba(121,37,146,0) 50%, rgba(121,37,146,0) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(121,37,146,1) 0%, rgba(121,37,146,0) 50%, rgba(121,37,146,0) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(121,37,146,1) 0%, rgba(121,37,146,0) 50%, rgba(121,37,146,0) 100%);
+	background: radial-gradient(ellipse at center, rgba(121,37,146,1) 0%, rgba(121,37,146,0) 50%, rgba(121,37,146,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#792592', endColorstr='#792592', GradientType=1 );
+}
+
+.green-glow{ content:''; position:absolute; display:block; width:300%; height:300%; top:-100%; right:-100%; z-index:-1;
+	background: rgba(117,234,118,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(117,234,118,1) 0%, rgba(117,234,118,0) 50%, rgba(117,234,118,0) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(117,234,118,1)), color-stop(50%, rgba(117,234,118,0)), color-stop(100%, rgba(117,234,118,0)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(117,234,118,1) 0%, rgba(117,234,118,0) 50%, rgba(117,234,118,0) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(117,234,118,1) 0%, rgba(117,234,118,0) 50%, rgba(117,234,118,0) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(117,234,118,1) 0%, rgba(117,234,118,0) 50%, rgba(117,234,118,0) 100%);
+	background: radial-gradient(ellipse at center, rgba(117,234,118,1) 0%, rgba(117,234,118,0) 50%, rgba(117,234,118,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75ea76', endColorstr='#75ea76', GradientType=1 );
+}
+
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin transition( $speed ){
+	-webkit-transition: all $speed ease-in-out;
+	-moz-transition:    all $speed ease-in-out;
+	-o-transition:      all $speed ease-in-out;
+	transition:         all $speed ease-in-out;
+}
+
+@mixin transition-transform( $speed ){
+	-webkit-transition: transform $speed ease-in-out;
+	-moz-transition:    transform $speed ease-in-out;
+	-o-transition:      transform $speed ease-in-out;
+	transition:         transform $speed ease-in-out;
+}
+
+@mixin remove-transition(){
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+@mixin transition-delay( $time ){
+	-webkit-transition-delay:   $time;
+	-moz-transition-delay:      $time;
+	-o-transition-delay:        $time;
+	transition-delay:           $time;
+}
+
+@mixin transform( $string ){
+	-webkit-transform: $string;
+	-moz-transform:    $string;
+	-ms-transform:     $string;
+	-o-transform:      $string;
+	transform:         $string;
+}
+
+@mixin transform-origin( $x , $y ){
+	-webkit-transform-origin: $x $y;
+	-moz-transform-origin: $x $y;
+	-o-transform-origin: $x $y;
+	-ms-transform-origin: $x $y;
+	transform-origin: $x $y;
+}
+
+@mixin skew( $val ){
+    -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+    -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+    -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+    -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+    transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+}
